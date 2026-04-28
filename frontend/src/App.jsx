@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import logo from "./assets/image.png";
 import {
   MapContainer,
   TileLayer,
@@ -219,10 +220,12 @@ export default function App() {
             style={{ background: "none", border: "none", cursor: "pointer" }}
             onClick={() => setPage("home")}
           >
-            <div className="logo-icon">
-              <Truck size={18} />
-            </div>
-            SmartChain AI
+            <img
+  src={logo}
+  alt="NAVYA Routes"
+  style={{ height: 28, marginRight: 8 }}
+/>
+<span style={{ fontWeight: 700 }}>NAVYA Routes</span>
           </button>
 
           <div className="nav-links">
@@ -252,20 +255,23 @@ export default function App() {
         {page === "home" && (
           <>
             <section className="hero">
+              <div className="hero-tag">
+  Google Solution Challenge 2026 · AI for Resilient Logistics
+</div>
               <div className="hero-text">
                 <div className="hero-tag">
-                  AI-Powered Logistics Intelligence
+                  AI-Powered Route Intelligence Platform
                 </div>
                 <h1>
-                  Detect delays before
+                  Predict disruptions before
                   <br />
-                  they become{" "}
-                  <span className="accent">disasters.</span>
+                  they impact{" "}
+                  <span className="accent">delivery.</span>
                 </h1>
                 <p className="hero-sub">
-                  SmartChain AI continuously analyzes shipment routes, weather
-                  risk, traffic bottlenecks, and logistics conditions to suggest
-                  optimized route adjustments in real time — powered by live APIs.
+                  NAVYA Routes uses real-time geospatial data, weather intelligence,
+and AI-driven risk modeling to predict delays, optimize routes,
+and ensure resilient logistics operations.
                 </p>
                 <div className="hero-btns">
                   <button
@@ -295,8 +301,9 @@ export default function App() {
                   </div>
                 </div>
                 <p style={{ fontSize: 14, color: "var(--muted)", lineHeight: 1.7 }}>
-                  Powered by Geocoding, OSRM route calculation, Open-Meteo
-                  weather, and AI risk analysis via OpenRouter.
+                  Combines geocoding, route optimization, weather intelligence,
+and AI-driven predictive analytics to detect disruptions
+and recommend optimal logistics decisions in real time.
                 </p>
                 <div className="hero-stats">
                   <div className="hero-stat">
@@ -706,7 +713,7 @@ export default function App() {
                 <div className="ai-panel">
                   <div className="ai-header">
                     <div className="ai-dot" />
-                    <div className="ai-title">SMARTCHAIN AI ENGINE</div>
+                    <div className="ai-title">NAVYA ROUTES AI ENGINE</div>
                   </div>
 
                   {aiSummary ? (
@@ -950,12 +957,11 @@ export default function App() {
         {/* ─── FOOTER ─── */}
         <footer>
           <div className="footer-logo">
-            <Truck size={16} />
-            SmartChain AI
+           <img src={logo} alt="NAVYA Routes" style={{ height: 18 }} />
+NAVYA Routes
           </div>
           <span>
-            Resilient Logistics · Dynamic Supply Chain Optimization · Powered by
-            Live APIs
+           Predictive Routing · Real-Time Risk Intelligence · AI-Powered Logistics Optimization
           </span>
           <span style={{ fontFamily: "var(--mono)", fontSize: 11 }}>
             v2.0.0 · 2026
