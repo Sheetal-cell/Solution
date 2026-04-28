@@ -21,6 +21,12 @@ router.post("/analyze", async (req, res) => {
     const destinationGeo = await geocodeLocation(destination);
 
     if (!sourceGeo || !destinationGeo) {
+  return res.status(404).json({
+    message: "Could not find source or destination location.",
+  });
+}
+
+    if (!sourceGeo || !destinationGeo) {
       return res.status(404).json({
         message: "Could not find source or destination location.",
       });
