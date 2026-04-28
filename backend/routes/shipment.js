@@ -27,7 +27,18 @@ router.post("/analyze", async (req, res) => {
     }
 
     const currentRouteData = await getRoute(sourceGeo, destinationGeo);
-    const weatherRisk = await getWeatherRisk(sourceGeo, destinationGeo);
+    let weatherRisk;
+
+try {
+  weatherRisk = await getWeatherRisk(sourceGeo, destinationGeo);
+} catch (err) {
+  console.error("Weather API failed:", err.message);
+
+  weatherRisk = {
+    riskLevel: "Unknown",
+    summary: "Weather data unavailable",
+  };
+}
 
     const analysis = await analyzeWithAI({
       shipmentId,
